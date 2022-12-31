@@ -1,14 +1,17 @@
-# flappy
-A Flappy-Type game that I made.
+# fwappy
+A Fwappy-Type game that I made.
 
-# Compiling
-Unlike the initial release of my last project, *invreturn*, I actually have a functioning ``makefile`` for this project. Due to my lack of knowledge on the subject of makefiles, however, *the makefile is only compatable with GCC*. If you have GCC installed, simple run the command ``make`` to compile the program. You need the NCurses packages in order to compile and run, which are - correct me if I'm wrong - ``libncurses5`` and ``libncurses5-dev`` on the Ubuntu repository. If you're using a compiler other than GCC, then either edit the "gcc" in (the?) ``makefile`` with the compiler of your choice.
-Another thing of note is that, to my knowledge, the program is *not* compatable with non-POSIX systems due to the usage of POSIX-threads. 
+# Compiwing
+Unwike the initiaw wewease of my wast pwoject, *invwetuwn*, I actuawwy have a functioning ``makefile`` fow this pwoject. Due to my wack of knowwedge on the subject of makefiwes, howevew, *the makefiwe is onwy compatabwe with GCC*. If you have GCC instawwed, simpwe wun the command ``make`` to compiwe the pwogwam. You need the NCuwses packages in owdew to compiwe and wun, which awe - cowwect me if I'm wwong - ``libncurses5`` and ``libncurses5-dev`` on the Ubuntu wepositowy. If you'we using a compiwew othew than GCC, then eithew edit the "gcc" in (the?) ``makefile`` with the compiwew of youw choice.
+Anothew thing of note is that, to my knowwedge, the pwogwam is *not* compatabwe with non-POSIX systems due to the usage of POSIX-thweads. 
 
 # Usage
-Usage is very simple. Press any key to leave the main menu, and press any key to make Flappy - the little yellow square - move up. Try to get Flappy to go through the holes between the green pipes. If you fail, you'll be given a game over.
+Usage is vewy simpwe. Pwess any key to weave the main menu, and pwess any key to make Fwappy - the wittwe yewwow squawe - move up. Twy to get Fwappy to go thwough the howes between the gween pipes. If you faiw, you'ww be given a game ovew.
 
 # Updates
 
+*Vewsion 1.1* (December 31st, 2022)
+- Edits by Cass 'Owly' Python to make the game text better, uh, I mean "Edits by Cass 'Owwy" Python tuwu make the gawme text bettew"
+
 *Version 1.0* (May 14th, 2022)
-- Initial release.
+- Initiaw wewease.

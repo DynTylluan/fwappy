@@ -14,7 +14,7 @@ void* flappymv(void * arg){
 	}
 }
 
-int flappyclscheck(int y, int a){	//Collision Check
+int flappyclscheck(int y, int a){	//Cowwision Check
 	int b = 34 - (27-a);
 	if(y <= a || y >= b){
 		printw("flappypipea");
@@ -29,15 +29,16 @@ void mainmenu(){
 	wbkgd(mainmenu,COLOR_PAIR(7));
 	wattron(mainmenu,COLOR_PAIR(7));
 	box(mainmenu,0,0);
-	mvwprintw(mainmenu,1,1,"FLAPPY");
-	mvwprintw(mainmenu,2,1,"A Libre Flappy-type");
-	mvwprintw(mainmenu,3,1,"game by ACT");
-	mvwprintw(mainmenu,5,1,"PRESS ANY KEY TO BEGIN");
-	mvwprintw(mainmenu,8,1,"Version 1.0");
-	mvwprintw(mainmenu,9,1,"Copyright 2022 ACT");
-	mvwprintw(mainmenu,10,1,"Licensed under the");
-	mvwprintw(mainmenu,11,1,"GNU GPL 3.0");
-	mvwprintw(mainmenu,12,1,"https://github.com/act17/flappy");
+	mvwprintw(mainmenu,1,1,"FWAPPY");
+	mvwprintw(mainmenu,2,1,"A Wibwe Fwappy-type");
+	mvwprintw(mainmenu,3,1,"game by ACT, edited by Owwy :P");
+	mvwprintw(mainmenu,5,1,"PWESS ANY KEY TO BEGIN");
+	mvwprintw(mainmenu,8,1,"Vewsion 1.1");
+	mvwprintw(mainmenu,9,1,"Copywight 2022 ACT :3");
+	mvwprintw(mainmenu,10,1,"Wicensed undew the");
+	mvwprintw(mainmenu,11,1,"GNU GPW 3.0 >w<");
+	mvwprintw(mainmenu,12,1,"github.com/act17/flappy");
+	mvwprintw(mainmenu,13,1,"github.com/dyntylluan/fwappy");
 	refresh(); wrefresh(mainmenu);
 	getch();
 }
@@ -53,18 +54,18 @@ int main(){
 	//Init time
 	struct timespec ts;
 	ts.tv_sec = 0;
-	ts.tv_nsec = 83333333;				//Gamespeed. Every 0.83 seconds a frame is performed;
-							//Gamespeed is 15 FPS.
-	//Init Colors
-	init_pair(1,COLOR_BLUE,COLOR_BLUE);		//Sky color
-	init_pair(2,COLOR_WHITE,COLOR_WHITE);		//Ground color
-	init_pair(3,COLOR_YELLOW,COLOR_YELLOW);		//Flappy color
-	init_pair(4,COLOR_GREEN,COLOR_GREEN);		//Pipe color
+	ts.tv_nsec = 83333333;				//Gamespeed. Evewy 0.83 seconds a fwame iws pewfowmed;
+							//Gamespeed iws 15 fps.
+	//Init Cowows
+	init_pair(1,COLOR_BLUE,COLOR_BLUE);		//Sky cowow
+	init_pair(2,COLOR_WHITE,COLOR_WHITE);		//Gwound cowow
+	init_pair(3,COLOR_YELLOW,COLOR_YELLOW);		//Fwappy cowow
+	init_pair(4,COLOR_GREEN,COLOR_GREEN);		//Pipe cowow
 	init_pair(5,COLOR_BLACK,COLOR_BLACK);
-	init_pair(6,COLOR_CYAN,COLOR_CYAN);		//Color for main menu
-	init_pair(7,COLOR_BLACK,COLOR_WHITE);		//And game over screen.
+	init_pair(6,COLOR_CYAN,COLOR_CYAN);		//Cowow fow main menu
+	init_pair(7,COLOR_BLACK,COLOR_WHITE);		//and gawme ovew scween.
 
-	//Main Menu Function (Added after game was developed.)
+	//Main menu function (added aftew gawme was devewoped.)
 	mainmenu();
 
 	//Init windows
@@ -76,20 +77,20 @@ int main(){
 	//Init PThread
 	pthread_t flappymove;
 
-	//Apply colors to window
+	//Appwy cowows tuwu window
 	wbkgd(stdscr,COLOR_PAIR(5));
 	wbkgd(sky,COLOR_PAIR(1)); wbkgd(ground,COLOR_PAIR(2));
 	wbkgd(flappy,COLOR_PAIR(3)); wbkgd(roof,COLOR_PAIR(2));
 	wattron(ground,COLOR_PAIR(5));
 	refresh(); wrefresh(sky); wrefresh(ground); wrefresh(roof); wrefresh(flappy);
 
-	int flappyhit = 0;		//Numeric track if flappy is hit.
-	int pipeheight,pipebheight;	//Value of the height of a new pipe and 'Compliment' to pipeheight's height.
-	int score = 0;			//Numeric track of pipes passed.
-	int pipemoves = 1;		//Numeric count of pipe movements to see if the pipe should be deleted.
-	int flappyheight = 18;		//Numeric track of Flappy's height.
+	int flappyhit = 0;		//Numewic twack if fwappy iws hit.
+	int pipeheight,pipebheight;	//vawue of the height of a new pipe awnd 'compwiment' tuwu pipeheight's height.
+	int score = 0;			//Numewic twack of pipes passed.
+	int pipemoves = 1;		//Numewic count of pipe movements tuwu see if the pipe shouwd be deweted.
+	int flappyheight = 18;		//Numewic twack of fwappy's height.
 
-	do{				//This loop will end when Flappy is hit.
+	do{				//Thiws woop wiww end whewn fwappy iws hit.
 			pipeheight = pipeheightgenerator();
 			WINDOW * pipea = newwin(pipeheight,1,4,71);
 			WINDOW * pipeb = newwin(28-pipeheight,1,1,71);
@@ -107,8 +108,8 @@ int main(){
 			break;
 		}
 		
-		wbkgd(pipea,COLOR_PAIR(1));	wrefresh(pipea);		//This 'erases' the pipe's prescence onscreen.
-		mvwin(pipea,1,71-pipemoves);	wbkgd(pipea,COLOR_PAIR(4));	//This makes the pipe appear in a new position.
+		wbkgd(pipea,COLOR_PAIR(1));	wrefresh(pipea);		//Thiws 'ewases' the pipe's pwescence onscween.
+		mvwin(pipea,1,71-pipemoves);	wbkgd(pipea,COLOR_PAIR(4));	//Thiws makes the pipe appeaw in a new position.
 		wrefresh(pipea);
 		
 		wbkgd(pipeb,COLOR_PAIR(1));	wrefresh(pipeb);
@@ -116,29 +117,29 @@ int main(){
 		wrefresh(pipeb);
 		
 		pipemoves++;
-		flappyheight++;							//This decreases flappy's height by one.
+		flappyheight++;							//Thiws decweases fwappy's height by owne.
 
 		flappymoved = pthread_create(&flappymove, NULL, flappymv, NULL);
 		nanosleep(&ts,&ts);
 		pthread_cancel(flappymove);
 
-		if(flappymoved == 1){						//If user made an input during this frame...
-			flappyheight = flappyheight - 6;			//Raise Flappy's positon by 5 units.	
+		if(flappymoved == 1){						//If usew made an input duwing thiws fwame...
+			flappyheight = flappyheight - 6;			//Waise fwappy's positon by 5 units.	
 		}
 
 		wbkgd(flappy,COLOR_PAIR(1));	wrefresh(flappy);
 		mvwin(flappy,flappyheight,6);	wbkgd(flappy,COLOR_PAIR(3));
 		wrefresh(flappy);
 		
-		if(flappyheight == 1 || flappyheight == 36){			//If Flappy hits the roof or ground,
-			flappyhit = 1;						//Tell program Flappy was hit,
-			break;							//And break the game loop.
+		if(flappyheight == 1 || flappyheight == 36){			//If fwappy hits the woof ow gwound,
+			flappyhit = 1;						//Teww pwogwam fwappy was hit,
+			break;							//Awnd bweak the gawme woop.
 		}	
-		if(pipemoves == 66){						//If pipes are at Flappy's x-axis
-			flappyhit = flappyclscheck(flappyheight,pipeheight);	//Perform a collision check.
-			if(flappyhit != 0)					//If Flappy was hit,
-				break;						//Break the game loop.
-			score++;						//Else, add 1 to the score.
+		if(pipemoves == 66){						//If pipes awe at fwappy's x-axis
+			flappyhit = flappyclscheck(flappyheight,pipeheight);	//Pewfowm a cowwision check.
+			if(flappyhit != 0)					//If fwappy was hit,
+				break;						//Bweak the gawme woop.
+			score++;						//Ewse, add 1 tuwu the scowe.
 		}
 
 	}
@@ -150,11 +151,11 @@ int main(){
 	wattron(gameoverwin,COLOR_PAIR(7));
 	box(gameoverwin,0,0);
 	
-	mvwprintw(gameoverwin,2,2,"GAME OVER!");
-	mvwprintw(gameoverwin,3,2,"You lost.");
-	mvwprintw(gameoverwin,5,2,"Your score:");
+	mvwprintw(gameoverwin,2,2,"GAME OVEW :<");
+	mvwprintw(gameoverwin,3,2,"You wost ;-;");
+	mvwprintw(gameoverwin,5,2,"Youw scowe:");
 	mvwprintw(gameoverwin,6,2,"   %d",score);
-	mvwprintw(gameoverwin,9,2,"PRESS ANY");
+	mvwprintw(gameoverwin,9,2,"PWESS ANY");
 	mvwprintw(gameoverwin,10,2,"KEY TO EXIT");
 	
 	refresh(); wrefresh(gameoverwin);
